@@ -1,19 +1,9 @@
 class PowerClient::InstallGenerator < Rails::Generators::Base
-  source_root File.expand_path('../templates', __FILE__)
+  source_root File.expand_path('templates', __dir__)
 
-  def create_initializer
-    template "initializer.rb", "config/initializers/power_client.rb"
-  end
+  desc "This generator installs active_job_log gem"
 
-  def mount_routes
-    line = "Rails.application.routes.draw do\n"
-    inject_into_file "config/routes.rb", after: line do <<-"HERE".gsub(/^ {4}/, '')
-      mount PowerClient::Engine => "/power_client"
-    HERE
-    end
-  end
-
-  def copy_engine_migrations
-    rake "railties:install:migrations"
+  def install_active_job_log
+    generate "active_job_log:install"
   end
 end
