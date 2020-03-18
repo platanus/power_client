@@ -1,0 +1,5 @@
+Description:
+    This generator creates all necesary files for a new Client
+
+Example:
+    rails generate power_client:client Login
