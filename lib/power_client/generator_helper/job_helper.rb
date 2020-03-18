@@ -19,7 +19,7 @@ module PowerClient::GeneratorHelper::JobHelper
 
   def job_tpl
     <<~JOB
-      class Clients::#{camel_case_name}Job < ApplicationJob
+      class Clients::#{camel_case_name}Job < PowerClient::ChromeClientJob
         def perform
           raw_data = client.crawl
           formatted_data = parser.parse_data(raw_data)
