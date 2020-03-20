@@ -21,7 +21,7 @@ module PowerClient::GeneratorHelper::JobHelper
     <<~JOB
       class Clients::#{camel_case_name}Job < PowerClient::ChromeClientJob
         def perform
-          raw_data = client.crawl
+          raw_data = client.perform
           formatted_data = parser.parse_data(raw_data)
         end
 

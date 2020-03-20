@@ -24,7 +24,7 @@ RSpec.describe PowerClient::GeneratorHelper::JobHelper, type: :generator do
       <<~JOB
         class Clients::LoginJob < PowerClient::ChromeClientJob
           def perform
-            raw_data = client.crawl
+            raw_data = client.perform
             formatted_data = parser.parse_data(raw_data)
           end
 

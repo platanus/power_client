@@ -14,8 +14,8 @@ module PowerClient::GeneratorHelper::ClientHelper
       class #{camel_case_name}Client < PowerClient::ChromeClient
         URL = 'www.platan.us'
 
-        def crawl
-          # crawler logic goes in here
+        def perform
+          # client logic goes in here
         end
       end
     CLIENT

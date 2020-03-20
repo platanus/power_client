@@ -36,8 +36,8 @@ This will generate the following files:
 class LoginClient < PowerClient::ChromeClient
   URL = 'www.platan.us'
 
-  def crawl
-    # crawler logic goes in here
+  def perform
+    # client logic goes in here
   end
 end
 ```
@@ -74,7 +74,7 @@ The corresponding Job:
 # app/jobs/clients/login_job.rb
 class Clients::LoginJob < PowerClient::ChromeClientJob
   def perform
-    raw_data = client.crawl
+    raw_data = client.perform
     formatted_data = parser.parse_data(raw_data)
   end
 

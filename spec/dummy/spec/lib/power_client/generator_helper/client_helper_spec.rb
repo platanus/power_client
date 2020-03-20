@@ -25,8 +25,8 @@ RSpec.describe PowerClient::GeneratorHelper::ClientHelper, type: :generator do
         class LoginClient < PowerClient::ChromeClient
           URL = 'www.platan.us'
 
-          def crawl
-            # crawler logic goes in here
+          def perform
+            # client logic goes in here
           end
         end
       CLIENT
