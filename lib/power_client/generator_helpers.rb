@@ -1,7 +1,6 @@
 module PowerClient
   class GeneratorHelpers
     include GeneratorHelper::ClientHelper
-    include GeneratorHelper::CommandHelper
     include GeneratorHelper::JobHelper
     include GeneratorHelper::NameHelper
     include GeneratorHelper::ParserHelper

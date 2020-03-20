@@ -23,7 +23,6 @@ module PowerClient::GeneratorHelper::JobHelper
         def perform
           raw_data = client.crawl
           formatted_data = parser.parse_data(raw_data)
-          Clients::#{camel_case_name}.for(formatted_data: formatted_data)
         end
 
         private

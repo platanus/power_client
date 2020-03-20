@@ -20,7 +20,6 @@ Gem::Specification.new do |s|
   s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "active_job_log"
-  s.add_dependency "power-types"
   s.add_dependency "rails", ">= 4.2.0"
 
   s.add_development_dependency "coveralls"

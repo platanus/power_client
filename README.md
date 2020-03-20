@@ -68,33 +68,6 @@ RSpec.describe LoginParser, type: :parser do
 end
 ```
 
-The corresponding PowerTypes::Command:
-
-```ruby
-# app/commands/clients/login.rb
-class Clients::Login < PowerTypes::Command.new(:formatted_data)
-  def perform
-    # Command code goes here
-  end
-end
-```
-
-And its corresponding rspec file:
-
-```ruby
-# spec/commands/clients/login_spec.rb
-require 'rails_helper'
-
-describe Clients::Login do
-  def perform(*_args)
-    described_class.for(*_args)
-  end
-
-  pending "describe what perform does here"
-end
-```
-
-
 The corresponding Job:
 
 ```ruby
@@ -103,7 +76,6 @@ class Clients::LoginJob < PowerClient::ChromeClientJob
   def perform
     raw_data = client.crawl
     formatted_data = parser.parse_data(raw_data)
-    Clients::Login.for(formatted_data: formatted_data)
   end
 
   private
@@ -138,7 +110,6 @@ You can add the following flags to the generate command:
 - `--specs false`: creates no RSpec files
 - `--parser false`: creates no Parser file
 - `--job false`: creates no Job file
-- `--command false`: creates no Command files
 
 ### Basic Structure
 

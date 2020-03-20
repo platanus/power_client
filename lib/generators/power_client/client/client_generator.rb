@@ -25,14 +25,6 @@ class PowerClient::ClientGenerator < Rails::Generators::NamedBase
     desc: 'to indicate if related job should be created'
   )
 
-  class_option(
-    :command,
-    type: 'boolean',
-    aliases: '-c',
-    default: true,
-    desc: 'to indicate if related command should be created'
-  )
-
   def create_client
     create_file(helper.client_path, helper.client_tpl)
   end
@@ -61,18 +53,6 @@ class PowerClient::ClientGenerator < Rails::Generators::NamedBase
     create_file(helper.job_spec_path, helper.job_spec_tpl)
   end
 
-  def create_command
-    return unless helper.add_command
-
-    create_file(helper.command_path, helper.command_tpl)
-  end
-
-  def create_command_spec
-    return unless helper.add_specs && helper.add_command
-
-    create_file(helper.command_spec_path, helper.command_spec_tpl)
-  end
-
   private
 
   def helper
@@ -81,7 +61,6 @@ class PowerClient::ClientGenerator < Rails::Generators::NamedBase
       add_specs: options[:specs],
       add_parser: options[:parser],
       add_job: options[:job],
-      add_command: options[:command],
     )
   end
 end

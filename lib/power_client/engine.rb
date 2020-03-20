@@ -12,7 +12,6 @@ module PowerClient
     initializer "initialize" do
       require_relative "./errors"
       require_relative "./generator_helper/client_helper"
-      require_relative "./generator_helper/command_helper"
       require_relative "./generator_helper/job_helper"
       require_relative "./generator_helper/name_helper"
       require_relative "./generator_helper/parser_helper"

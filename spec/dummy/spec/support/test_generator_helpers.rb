@@ -8,7 +8,6 @@ module TestGeneratorHelpers
     let(:add_specs) { true }
     let(:add_parser) { true }
     let(:add_job) { true }
-    let(:add_command) { true }
 
     let(:init_params) do
       {
@@ -16,7 +15,6 @@ module TestGeneratorHelpers
         add_specs: add_specs,
         add_parser: add_parser,
         add_job: add_job,
-        add_command: add_command
       }
     end
   end
