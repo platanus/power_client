@@ -1,3 +1,5 @@
+require "active_job_log"
+
 require "power_client/engine"
 
 module PowerClient
