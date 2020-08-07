@@ -17,6 +17,7 @@ module PowerClient
       require_relative "./generator_helper/name_helper"
       require_relative "./generator_helper/parser_helper"
       require_relative "./generator_helper/rspec_helper"
+      require_relative "./generator_helper/shrine_helper"
       require_relative "./generator_helpers"
     end
   end

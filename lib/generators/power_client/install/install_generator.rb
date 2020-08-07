@@ -15,6 +15,10 @@ class PowerClient::InstallGenerator < Rails::Generators::Base
     create_file(helper.job_model_path, helper.job_model_tpl)
   end
 
+  def create_shrine_uploader
+    create_file(helper.uploader_path, helper.uploader_tpl)
+  end
+
   private
 
   def helper
