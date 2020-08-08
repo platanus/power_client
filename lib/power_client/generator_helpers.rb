@@ -2,9 +2,11 @@ module PowerClient
   class GeneratorHelpers
     include GeneratorHelper::ClientHelper
     include GeneratorHelper::JobHelper
+    include GeneratorHelper::JobModelHelper
     include GeneratorHelper::NameHelper
     include GeneratorHelper::ParserHelper
     include GeneratorHelper::RSpecHelper
+    include GeneratorHelper::ShrineHelper
 
     def initialize(config = {})
       config.each do |attribute, value|

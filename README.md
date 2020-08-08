@@ -20,6 +20,18 @@ Then, run the installer:
 rails generate power_client:install
 ```
 
+This will:
+- Install [`active_job_log`](https://github.com/platanus/active_job_log) gem, which generates the `ActiveJobLog::Job` model
+- Create a new `ClientJob` model, which will have the responsablity of saving error screenshots using Shrine. This model has a 1-1 relation with `ActiveJobLog::Job` model, so please add the following lines to this last model:
+
+```ruby
+    has_one :client_job,
+      foreign_key: 'active_job_log_job_id', required: false, dependent: :destroy,
+      inverse_of: :active_job_log_job
+```
+
+- Create the file `app/uploaders/image_uploader.rb`
+
 ## Usage
 
 ### Creating new clients
